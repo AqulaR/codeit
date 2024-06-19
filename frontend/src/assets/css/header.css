@@ -1,0 +1,42 @@
+.header_nav {
+    height: 35px;
+    /* flex: 0 35px; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header_links {
+    color: #242635;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header_nav_dark {
+    height: 35px;
+    background-color: #242635;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header_links_light {
+    color: #e2e2e2;
+    text-decoration: none;
+    /* cursor: pointer; */
+}
+
+.header_link_active_light {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.header_link_active {
+    border-bottom: 1px solid #242635;
+}
+
+.header_logo {
+    height: 20px;
+    width: auto;
+}
+
+.header_logo_dark {
+    height: 20px;
+    width: auto;
+    background-color: #242635;
+}

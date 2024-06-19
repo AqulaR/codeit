@@ -1,0 +1,79 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+.modal-close-button {
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal-close-button:hover {
+    color: rgb(255, 0, 0);
+    transition: all 0.3s ease-in-out;
+
+}
+
+.scale_close {
+    scale: 1.3;
+}
+
+
+.modal_del_btn {
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 0;
+    width: fit-content;
+    border: 2px solid #f52323;
+    color: #f52323;
+    font-weight: bolder;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal_del_btn:hover {
+    color: #ffffff;
+    background-color: #f52323;
+    transition: all 0.3s ease-in-out;
+}
+
+.dash_modal_btn {
+    padding: 0px 14px;
+    border-radius: 50%;
+    border: 0;
+    border: 2px solid #f5a623;
+    color: #f5a623;
+    font-weight: bolder;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.dash_modal_btn:hover {
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: #f5a623;
+    transition: all 0.3s ease-in-out;
+}
+
+/* .dash_modal_btn_scale {
+    scale: 1.1;
+} */

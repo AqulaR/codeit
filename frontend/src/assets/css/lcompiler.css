@@ -1,0 +1,65 @@
+.output_iframe {
+    height: 40vh;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.output_console {
+    height: 40vh;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 7px;
+    overflow: auto;
+}
+
+.run_code {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(7, 214, 7);
+    border: 0;
+    border-radius: 10px;
+    color: #ffffff;
+    border: 1px solid rgb(7, 214, 7);
+    transition: all 0.3s ease-in-out;
+}
+
+.run_code:hover {
+    background-color: #ffffff;
+    color: rgb(7, 214, 7);
+    transition: all 0.3s ease-in-out;
+}
+
+.leditor {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.monaco-editor {
+    border-radius: 10px;
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+.overflow-guard {
+    border-radius: 10px;
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+.slider {
+    border-radius: 10px;
+}
+
+.language_select {
+    height: 40px;
+    background-color: #242635;
+    border: 0;
+    border-radius: 10px;
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    padding: 0 10px;
+}

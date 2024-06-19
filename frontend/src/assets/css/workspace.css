@@ -1,0 +1,260 @@
+.tree_con {
+    /* background: #242322; */
+    /* font-family: monospace; */
+    font-size: 16px;
+    color: white;
+    user-select: none;
+    /* padding: 20px; */
+    /* border-radius: 0.4em; */
+    overflow: auto;
+    /* height: 92.9vh; */
+    flex: 0 250px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tree_con>* {
+    color: black;
+}
+
+.editor_part {
+    /* height: 96vh; */
+    flex: 1 auto;
+    height: 100%;
+}
+
+.tree_con .tree,
+.tree_con .tree-node,
+.tree_con .tree-node-group {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tree_con .tree-branch-wrapper,
+.tree_con .tree-node__leaf {
+    outline: none;
+    outline: none;
+}
+
+.tree_con .tree-node {
+    cursor: pointer;
+}
+
+.tree_con .tree-node:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tree_con .tree .tree-node--focused {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tree_con .tree .tree-node--selected {
+    background: rgba(48, 107, 176);
+}
+
+.tree_con .tree-node__branch {
+    display: block;
+}
+
+.tree_con .icon {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.output_con {
+    flex: 1 auto;
+}
+
+.filesWS {
+    display: flex;
+    gap: 2;
+    overflow: auto;
+    min-height: 28px;
+    width: 1200px;
+    flex: 0 28px;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+.editorWS_con {
+    flex: 0 1200px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    /* height: 96vh; */
+}
+
+.editorWS>.monaco-editor>.overflow-guard {
+    border-radius: 0 !important;
+}
+
+@media (width <=1920px) {
+    .filesWS {
+        width: 800px;
+    }
+
+    .editorWS_con {
+        flex: 0 800px;
+    }
+}
+
+@media (width <=1500px) {
+    .filesWS {
+        width: 600px;
+    }
+
+    .editorWS_con {
+        flex: 0 600px;
+    }
+}
+
+@media (width <=1200px) {
+    .filesWS {
+        width: 500px;
+    }
+
+    .editorWS_con {
+        flex: 0 500px;
+    }
+}
+
+.editorWS {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* padding-top: 10px; */
+    /* border-radius: 10px; */
+    border-right: 0;
+    border-left: 0;
+    flex: auto 1;
+    /* height: 93vh; */
+}
+
+.output_iframe_WS_outer {
+    /* height: 80vh; */
+    /* border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    resize:both;
+    overflow: auto;
+    border-left: 0;
+    flex: 0 70%; */
+    width: 100%;
+
+    /* height: 70%; */
+    /* flex: 0 70%; */
+    
+    /* resize: vertical;
+    overflow: auto;
+    max-height: 75%; */
+    /* max-width: fit-content; */ 
+}
+
+.output_iframe_WS {
+    /* height: 80vh; */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    resize:both;
+    overflow: auto;
+    border-left: 0;
+    flex: 0 75%;
+}
+
+
+.output_console_WS {
+    /* height: 13vh; */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 0;
+    border-left: 0;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 7px;
+    overflow: auto;
+    flex: auto 1;
+    /* flex-grow: 1; */
+}
+
+.editWSfile {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2px 35px;
+}
+
+.WSoptns_con {
+    display: flex;
+    gap: 2;
+    overflow-y: auto;
+    height: 28px;
+    overflow: hidden;
+}
+
+.tree_outer {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    /* height: 96vh; */
+}
+
+.tree_btns {
+    width: 30px;
+    height: 28px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.3s ease-in-out;
+}
+
+.tree_btns:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.tree_upper {
+    height: 28px;
+    padding: 0 10px 0 20px;
+}
+
+.tree_upper>span {
+    font-size: 12px;
+}
+
+.tree_upper_btns_size {
+    scale: 1.2;
+}
+
+ul {
+    padding-left: 10px !important;
+}
+
+.editorWS_preview_btn {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    /* border-right: 1px solid rgba(0, 0, 0, 0.1); */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    max-width: 35px;
+    height: 28px;
+}
+
+.editorWS_preview_btn_scale {
+    scale: 1.1;
+}
+
+.WStab_active {
+    border-top: 2px solid rgb(73, 41, 255);
+}
+
+.editorWSFileSel {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+}
+
+.circleWS {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(82, 137, 255);
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.ide {
+    flex: 1 auto;
+}

@@ -1,0 +1,30 @@
+.accordion {
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    /* margin-bottom: 10px; */
+}
+
+.accordion-btn {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+    /* padding: 10px; */
+    text-align: left;
+    width: 100%;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-top: 10px;
+}
+
+.accordion-content.open {
+    max-height: 200px;  
+}
+
+.rotated {
+    transform: rotate(45deg);
+    transition: all 0.2s ease-in-out;
+}
