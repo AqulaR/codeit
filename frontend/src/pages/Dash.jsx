@@ -11,6 +11,7 @@ import { RiImportFill } from "react-icons/ri";
 import { IoCloseOutline } from "react-icons/io5";
 
 function Dash() {
+  const serverUrl = import.meta.env.VITE_SERVER_URL;
   const navigate = useNavigate();
   const [allWorkspaces, setAllWorkspaces] = useState([]);
   const [userData, setUserData] = useState([]);
@@ -56,7 +57,7 @@ function Dash() {
 
     const fetchData = async () => {
       try {
-        const responseAllWorkspaces = await fetch('http://localhost:5000/api/workspaces/', {
+        const responseAllWorkspaces = await fetch(`${serverUrl}/api/workspaces/`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -68,7 +69,7 @@ function Dash() {
         wData.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         setAllWorkspaces(wData);
 
-        const responseUserData = await fetch('http://localhost:5000/api/auth/me', {
+        const responseUserData = await fetch(`${serverUrl}/api/auth/me`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -105,7 +106,7 @@ function Dash() {
   const handleCreateWorkspace = async (e) => {
     e.preventDefault();
     try {
-      const responseCreateWS = await fetch('http://localhost:5000/api/workspaces', {
+      const responseCreateWS = await fetch(`${serverUrl}/api/workspaces`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -133,7 +134,7 @@ function Dash() {
   const handleImportRepo = async (e) => {
     e.preventDefault();
     try {
-      const responseImportRepo = await fetch('http://localhost:5000/api/workspaces/import', {
+      const responseImportRepo = await fetch(`${serverUrl}/api/workspaces/import`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -152,7 +153,7 @@ function Dash() {
 
   const DataWSUpdate = async () => {
     try {
-      const responseAllWorkspaces = await fetch('http://localhost:5000/api/workspaces/', {
+      const responseAllWorkspaces = await fetch(`${serverUrl}/api/workspaces/`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

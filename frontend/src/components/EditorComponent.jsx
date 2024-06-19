@@ -6,6 +6,8 @@ import { IoCloseOutline } from "react-icons/io5";
 import OutputWS from "./OutputWS";
 
 function EditorComponent({ receivedData, onSendData, workspaceId, token, treeData }) {
+    const serverUrl = import.meta.env.VITE_SERVER_URL;
+
     const editorRef = useRef();
     const [value, setValue] = useState("");
     // const [selectedFile, setSelectedFile] = useState([]);
@@ -149,7 +151,7 @@ function EditorComponent({ receivedData, onSendData, workspaceId, token, treeDat
         console.log(fileName);
         console.log(content);
         try {
-            const responseUpdateFileData = await fetch('http://localhost:5000/api/workspaces/file', {
+            const responseUpdateFileData = await fetch(`${serverUrl}/api/workspaces/file`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

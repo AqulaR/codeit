@@ -25,6 +25,7 @@ import { AddDialog } from "./AddDialog";
 import { AddDialogF } from "./AddDialogF";
 
 function TreeViewComponent({ onSendData, onSendTreeData }) {
+    const serverUrl = import.meta.env.VITE_SERVER_URL;
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const workspaceId = searchParams.get('id');
@@ -39,7 +40,7 @@ function TreeViewComponent({ onSendData, onSendTreeData }) {
         }
         const fetchData = async () => {
             try {
-                const responseFileTree = await fetch('http://localhost:5000/api/workspaces/fileTree/', {
+                const responseFileTree = await fetch(`${serverUrl}/api/workspaces/fileTree/`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -61,7 +62,7 @@ function TreeViewComponent({ onSendData, onSendTreeData }) {
     const handleUpdateFetch = async () => {
         const fetchData = async () => {
             try {
-                const responseFileTree = await fetch('http://localhost:5000/api/workspaces/fileTree/', {
+                const responseFileTree = await fetch(`${serverUrl}/api/workspaces/fileTree/`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -131,7 +132,7 @@ function TreeViewComponent({ onSendData, onSendTreeData }) {
         console.log(oldloc);
         console.log(newloc);
         try {
-            const responseMove = await fetch('http://localhost:5000/api/workspaces/node/move/', {
+            const responseMove = await fetch(`${serverUrl}/api/workspaces/node/move/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -215,7 +216,7 @@ function TreeViewComponent({ onSendData, onSendTreeData }) {
         console.log(workspaceId);
         console.log(fileName);
         try {
-            const responseDelFile = await fetch('http://localhost:5000/api/workspaces/file/', {
+            const responseDelFile = await fetch(`${serverUrl}/api/workspaces/file/`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -239,7 +240,7 @@ function TreeViewComponent({ onSendData, onSendTreeData }) {
         console.log(workspaceId);
         console.log(folderName);
         try {
-            const responseDelFolder = await fetch('http://localhost:5000/api/workspaces/folder/', {
+            const responseDelFolder = await fetch(`${serverUrl}/api/workspaces/folder/`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -332,7 +333,7 @@ function TreeViewComponent({ onSendData, onSendTreeData }) {
         console.log(newFolder);
 
         try {
-            const responseAddNewFolder = await fetch('http://localhost:5000/api/workspaces/folder/', {
+            const responseAddNewFolder = await fetch(`${serverUrl}/api/workspaces/folder/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -385,7 +386,7 @@ function TreeViewComponent({ onSendData, onSendTreeData }) {
         console.log(workspaceId);
         console.log(fileName);
         try {
-            const responseAddNewFile = await fetch('http://localhost:5000/api/workspaces/file/', {
+            const responseAddNewFile = await fetch(`${serverUrl}/api/workspaces/file/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -451,7 +452,7 @@ function TreeViewComponent({ onSendData, onSendTreeData }) {
         console.log(oldFileName);
         console.log(newFileName);
         try {
-            const responseAddNewFile = await fetch('http://localhost:5000/api/workspaces/file/rename/', {
+            const responseAddNewFile = await fetch(`${serverUrl}/api/workspaces/file/rename/`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -478,7 +479,7 @@ function TreeViewComponent({ onSendData, onSendTreeData }) {
         console.log(oldFolder);
         console.log(newFolder);
         try {
-            const responseAddNewFile = await fetch('http://localhost:5000/api/workspaces/folder/', {
+            const responseAddNewFile = await fetch(`${serverUrl}/api/workspaces/folder/`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

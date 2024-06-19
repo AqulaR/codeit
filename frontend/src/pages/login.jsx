@@ -7,6 +7,8 @@ import React from "react"
 import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
+  const serverUrl = import.meta.env.VITE_SERVER_URL;
+
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -20,14 +22,10 @@ function Login() {
     }
   }, []);
 
-  // const handleLoginSuccess = () => {
-  //   window.location.href = '/dash';
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const responseLogin = await fetch('http://localhost:5000/api/auth/login', {
+      const responseLogin = await fetch(`${serverUrl}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +38,7 @@ function Login() {
       if (dataToken.success) {
         const token = dataToken.token;
   
-        const responseMe = await fetch('http://localhost:5000/api/auth/me', {
+        const responseMe = await fetch(`${serverUrl}/api/auth/me`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

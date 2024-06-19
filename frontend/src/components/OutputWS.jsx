@@ -6,18 +6,19 @@ import { VscDebugStart, VscDebugStop } from "react-icons/vsc";
 import { IoReloadOutline } from "react-icons/io5";
 
 const OutputWS = ({ editorRef, language, workspaceId, token }) => {
+    const serverUrl = import.meta.env.VITE_SERVER_URL;
     const [output, setOutput] = useState(['Здесь хранятся ответы от сервера']);
     const [url, setUrl] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
-    const [serverUrl, setServerUrl] = useState('');
+    const [serverPort, setServerPort] = useState('');
 
     const runCode = async (e) => {
         e.preventDefault();
 
         try {
             if (url == '') {
-                const responseStartServer = await fetch('http://localhost:5000/api/workspaces/start-server', {
+                const responseStartServer = await fetch(`${serverUrl}/api/workspaces/start-server`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -30,12 +31,12 @@ const OutputWS = ({ editorRef, language, workspaceId, token }) => {
 
                 // console.log(dataStart.url);
 
-                setUrl(dataStart.url);
+                setUrl(`${serverUrl}:${dataStart.port}/`);
                 // document.getElementById('preview-frame').src = `${dataStart.url}`;
-                document.getElementById('preview-frame').contentWindow.location = `${dataStart.url}`;
+                document.getElementById('preview-frame').contentWindow.location = `${serverUrl}:${dataStart.port}/`;
                 setOutput(prev => [...prev, `Сервер запущен на ${dataStart.url}`]);
             } else {
-                const responseStopServer = await fetch('http://localhost:5000/api/workspaces/stop-server', {
+                const responseStopServer = await fetch(`${serverUrlConf}/api/workspaces/stop-server`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

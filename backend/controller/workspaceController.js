@@ -536,7 +536,7 @@ exports.startServer = async (req, res) => {
     Ports.push(newPort);
 
     res.status(201).json({
-      url: `http://localhost:${port}/`,
+      port: port,
       message: `Сервер создан для ${userId} на порту: ${port}` 
     });
   } catch (error) {
@@ -553,13 +553,13 @@ exports.stopServer = async (req, res) => {
 
   try {
     if (!userId) {
-      return res.status(400).send('userId or port is required');
+      return res.status(400).send('UserId или Port не заданы');
     }
 
     const serverProcess = servers[userId];
 
     if (!serverProcess) {
-      return res.status(404).send('No server found for the specified username');
+      return res.status(404).send('Серверов по данному id не найдено');
     }
 
     // Ports.push(port);

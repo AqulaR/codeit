@@ -37,19 +37,6 @@ const Output = ({ editorRef, language }) => {
         }
     };
 
-    const openTab = async (e) => {
-        e.preventDefault();
-        if (url != '') {
-            window.open(url, '_blank');
-        }
-    };
-
-    const reload = async (e) => {
-        if (url != '') {
-            document.getElementById('preview-frame').contentWindow.location = `${url}`;
-        }
-    };
-
     return (
         <div className="output_con d-flex flex-column ps-2 gap-4">
             <div className="d-flex justify-content-between">

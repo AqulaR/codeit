@@ -5,6 +5,7 @@ import React from "react"
 import { Link, useNavigate } from 'react-router-dom';
 
 function Register() {
+  const serverUrl = import.meta.env.VITE_SERVER_URL;
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -29,7 +30,7 @@ function Register() {
         return console.log("Пароли не совпадают");
       }
 
-      const responseRegister = await fetch('http://localhost:5000/api/auth/register', {
+      const responseRegister = await fetch(`${serverUrl}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +44,7 @@ function Register() {
       if (dataToken.success) {
         const token = dataToken.token;
   
-        const responseMe = await fetch('http://localhost:5000/api/auth/me', {
+        const responseMe = await fetch(`${serverUrl}/api/auth/me`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -62,23 +63,6 @@ function Register() {
         console.log(dataToken.error);
         setError(dataToken.error);
       }
-
-      // const responseMe = await fetch('http://localhost:5000/api/auth/me', {
-      //   method: 'GET',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //     'Authorization': `Bearer ${token}`
-      //   }
-      // });
-
-      // const dataUser = await responseMe.json();
-
-      // localStorage.setItem('authToken', token);
-      // localStorage.setItem('Username', dataUser.data.username);
-      // localStorage.setItem('email', dataUser.data.email);
-
-      // handleRegisterSuccess();
-      // window.location.href = '/dash';
     } catch(error) {
       console.log(error.message);
     }

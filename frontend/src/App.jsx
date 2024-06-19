@@ -12,6 +12,8 @@ import Register from './pages/registration';
 import Workspace from './pages/Workspace';
 import ProtectedRoute from './components/ProtectedRoute';
 
+// console.log(import.meta.env.VITE_SERVER_URL);
+
 function App() {
   return (
     <>

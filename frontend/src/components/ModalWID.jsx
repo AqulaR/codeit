@@ -5,6 +5,7 @@ import { GrLinkNext } from "react-icons/gr";
 
 const ModalID = ({ isOpen, onClose, children, id, onupdate }) => {
   if (!isOpen) return null;
+  const serverUrl = import.meta.env.VITE_SERVER_URL;
   const [newWorkspaceName, setnewWorkspaceName] = useState('');
 
   const token = localStorage.getItem('authToken');
@@ -13,7 +14,7 @@ const ModalID = ({ isOpen, onClose, children, id, onupdate }) => {
 
     e.preventDefault();
     try {
-      const responseUpdateWS = await fetch(`http://localhost:5000/api/workspaces/${id}`, {
+      const responseUpdateWS = await fetch(`${serverUrl}/api/workspaces/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +34,7 @@ const ModalID = ({ isOpen, onClose, children, id, onupdate }) => {
   const handleDeleteWS = async (e) => {
     e.preventDefault();
     try {
-      const responseDeleteWS = await fetch(`http://localhost:5000/api/workspaces/${id}`, {
+      const responseDeleteWS = await fetch(`${serverUrl}/api/workspaces/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

@@ -8,6 +8,8 @@ const Header = () => {
   const [username, setUsername] = useState(''); 
   const [WSData, setWSData] = useState([]);
 
+  const serverUrl = import.meta.env.VITE_SERVER_URL;
+
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const workspaceId = searchParams.get('id');
@@ -33,7 +35,7 @@ const Header = () => {
 
       const fetchDataWSName = async () => {
         try {
-          const responseWSdata = await fetch(`http://localhost:5000/api/workspaces/${workspaceId}`, {
+          const responseWSdata = await fetch(`${serverUrl}/api/workspaces/${workspaceId}`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
