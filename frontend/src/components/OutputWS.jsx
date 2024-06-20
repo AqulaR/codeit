@@ -40,7 +40,7 @@ const OutputWS = ({ editorRef, language, workspaceId, token }) => {
                 document.getElementById('preview-frame').contentWindow.location = SURL;
                 setOutput(prev => [...prev, `Сервер запущен на ${SURL}`]);
             } else {
-                const responseStopServer = await fetch(`${serverUrlConf}/api/workspaces/stop-server`, {
+                const responseStopServer = await fetch(`${serverUrl}/api/workspaces/stop-server`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
