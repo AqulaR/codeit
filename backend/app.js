@@ -4,9 +4,15 @@ const connectDB = require('./config/db');
 const authRouter = require('./routes/auth');
 const adminRouter = require('./routes/admin');
 const workspaceRouter = require('./routes/workspace');
+const https = require('https');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+const options = {
+  key: fs.readFileSync('/etc/letsencrypt/live/your_domain_or_ip/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/your_domain_or_ip/fullchain.pem')
+};
 
 // Подключение к базе данных
 connectDB();
@@ -22,6 +28,10 @@ app.use('/api/auth', authRouter);
 app.use('/api/workspaces', workspaceRouter);
 
 // Запуск сервера
-app.listen(PORT, () => {
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
+
+https.createServer(options, app).listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
