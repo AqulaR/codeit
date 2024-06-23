@@ -11,8 +11,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 const options = {
-  key: fs.readFileSync('/etc/letsencrypt/live/your_domain_or_ip/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/your_domain_or_ip/fullchain.pem')
+  key: fs.readFileSync('/etc/letsencrypt/live/aqula.tw1.ru/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/aqula.tw1.ru/fullchain.pem')
 };
 
 // Подключение к базе данных
