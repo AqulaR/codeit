@@ -32,7 +32,6 @@ const OutputWS = ({ editorRef, language, workspaceId, token }) => {
                 // console.log(dataStart.url);
 
                 const parsedUrl = new URL(serverUrl);
-                parsedUrl.protocol = 'http:';
                 parsedUrl.port = dataStart.port;
 
                 const SURL = parsedUrl.toString();
