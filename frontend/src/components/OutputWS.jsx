@@ -37,7 +37,7 @@ const OutputWS = ({ editorRef, language, workspaceId, token }) => {
                 const SURL = parsedUrl.toString();
                 setUrl(SURL);
                 // document.getElementById('preview-frame').src = `${dataStart.url}`;
-                document.getElementById('preview-frame').contentWindow.location = SURL;
+                document.getElementById('preview-frame').contentWindow.location = `https://localhost:${dataStart.port}`;
                 setOutput(prev => [...prev, `Сервер запущен на ${SURL}`]);
             } else {
                 const responseStopServer = await fetch(`${serverUrl}/api/workspaces/stop-server/`, {
