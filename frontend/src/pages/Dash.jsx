@@ -165,6 +165,13 @@ function Dash() {
       const wData = Workspaces.data;
       wData.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       setAllWorkspaces(wData);
+      if (allWorkspaces.length != 0) {
+        const withUrlArray = allWorkspaces.filter(item => item.url);
+        const withoutUrlArray = allWorkspaces.filter(item => !item.url);
+
+        setRepos(withUrlArray);
+        setProjects(withoutUrlArray);
+      }
     } catch (error) {
       console.error('Ошибка в обращении:', error);
     }
