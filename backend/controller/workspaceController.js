@@ -181,7 +181,7 @@ exports.deleteWorkspace = async (req, res) => {
     const tmpPath = workspace.path;
     const index = tmpPath.lastIndexOf('\\');
     // console.log(index);
-    const workspacePath = tmpPath.slice(0, index)
+    const workspacePath = tmpPath.slice(0, index + 1)
 
     // console.log(workspacePath);
     fs.rmSync(workspacePath, { recursive: true });
