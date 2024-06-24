@@ -91,13 +91,13 @@ function Dash() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    if (allWorkspaces.length != 0) {
-      const withUrlArray = allWorkspaces.filter(item => item.url);
-      const withoutUrlArray = allWorkspaces.filter(item => !item.url);
+    // if (allWorkspaces.length != 0) {
+    const withUrlArray = allWorkspaces.filter(item => item.url);
+    const withoutUrlArray = allWorkspaces.filter(item => !item.url);
 
-      setRepos(withUrlArray);
-      setProjects(withoutUrlArray);
-    }
+    setRepos(withUrlArray);
+    setProjects(withoutUrlArray);
+    // }
   }, [allWorkspaces]);
 
   // console.log("repo:", repos);
