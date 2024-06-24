@@ -179,7 +179,7 @@ exports.deleteWorkspace = async (req, res) => {
 
     await workspace.deleteOne();
     const tmpPath = workspace.path;
-    const index = tmpPath.lastIndexOf('\\');
+    const index = tmpPath.lastIndexOf('/');
     console.log(tmpPath);
     console.log(index);
     // console.log(index);
