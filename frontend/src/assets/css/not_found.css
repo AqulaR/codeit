@@ -1,0 +1,28 @@
+.not_found_code {
+    font-size: 228px;
+    color: #0b76ef;
+}
+
+.not_found_outer {
+    background-color: #242635;
+    color: #ffffff;
+}
+
+.not_found_button { 
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 0;
+    border: 2px solid #f5a623;
+    color: #f5a623;
+    font-weight: bolder;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.not_found_button:hover {
+    color: #ffffff;
+    background-color: #f5a623;
+    transition: all 0.3s ease-in-out;
+}

@@ -146,6 +146,7 @@ function Dash() {
       const importedRepo = await responseImportRepo.json();
       console.log(importedRepo);
       DataWSUpdate();
+      closeModal2();
     } catch (error) {
       console.log(`Ошибка: ${error.message}`);
     }
@@ -190,6 +191,7 @@ function Dash() {
                   <span className="date_edited align-self-start">{format(data.createdAt, "dd.MM.yyyy")}</span>
                 </button>
               ))}
+              {allWorkspaces.length != 0 ? "" : "Пусто"}
             </div>
           </>
         );
@@ -210,6 +212,7 @@ function Dash() {
                   <span className="date_edited align-self-start">{format(data.createdAt, "dd.MM.yyyy")}</span>
                 </button>
               ))}
+              {repos.length != 0 ? "" : "Пусто"}
             </div>
           </>
         );
@@ -229,6 +232,7 @@ function Dash() {
                 <span className="date_edited align-self-start">{format(data.createdAt, "dd.MM.yyyy")}</span>
               </button>
             ))}
+            {projects.length != 0 ? "" : "Пусто"}
           </div>
         </>;
       case 'profile':
@@ -254,7 +258,7 @@ function Dash() {
               <span className="dash_profile_text">Николай</span>
             </div> */}
           </div>
-          <button className="dash_btn_exit" onClick={() => { localStorage.clear(); navigate('/login');}} ><span>Выход</span></button>
+          <button className="dash_btn_exit" onClick={() => { localStorage.clear(); navigate('/login'); }} ><span>Выход</span></button>
         </>;
       default:
         return <div>dashboard</div>;

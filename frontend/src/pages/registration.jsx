@@ -83,7 +83,7 @@ function Register() {
             </div>
             <div className="lr-info mt-5 justify-content-center">
               <Link to="/" className="">
-                <img src={logo} alt="" className="lr-header-logo" />
+                {/* <img src={logo} alt="" className="lr-header-logo" /> */}
               </Link>
             </div>
           </div>
@@ -112,7 +112,7 @@ function Register() {
             </div>
             <div className="lr-info mt-5">
               <Link to="/" className="">
-                <img src={logo} alt="" className="lr-header-logo" />
+                {/* <img src={logo} alt="" className="lr-header-logo" /> */}
               </Link>
             </div>
           </div>

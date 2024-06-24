@@ -103,7 +103,7 @@ function Home() {
                         </a>
                     </div>
                     <div className="nav_sml_block d-flex flex-column align-items-center git_repo_card">
-                        <a href="https://github.com/AqulaR/kurs_rab" className="non_a d-flex align-items-center justify-content-center">
+                        <a href="https://github.com/AqulaR/vkr_24_06_2024" className="non_a d-flex align-items-center justify-content-center">
                             <img src={git_repo} className="sml_blck_img_soc" alt="Git репозиторий" />
                         </a>
                     </div>
@@ -243,7 +243,7 @@ function Home() {
                                     <span className="fs-18">Делитесь кодом со всеми. Приглашайте людей для просмотра. Создавайте и творите!</span>
                                 </div>
                             </div>
-                            <a href="https://github.com/AqulaR/kurs_rab" className="button_no_button d-flex justify-content-between gap-3 ps-2 spedup_btn non_a" data-target="signup" >
+                            <a href="https://github.com/AqulaR/vkr_24_06_2024" className="button_no_button d-flex justify-content-between gap-3 ps-2 spedup_btn non_a" data-target="signup" >
                                 <span className="button_no_button_text">Репозиторий Git</span>
                             </a>
                         </div>
@@ -341,7 +341,7 @@ function Home() {
                         <Link to={ url } className="regular_button non_a color_white">Попробуйте сейчас</Link>
                     </span>
                     <div className="socials_con d-flex flex-column gap-2 pt-5">
-                        <a href="https://github.com/AqulaR/kurs_rab" className="socials fs-24">Git-Репозиторий</a>
+                        <a href="https://github.com/AqulaR/vkr_24_06_2024" className="socials fs-24">Git-Репозиторий</a>
                         <a href="https://web.telegram.org" className="socials fs-24">Телеграмм</a>
                         <a href="https://vk.com" className="socials fs-24">Вконтакте</a>
                     </div>
