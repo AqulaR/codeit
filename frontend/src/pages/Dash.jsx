@@ -16,6 +16,7 @@ function Dash() {
   const [allWorkspaces, setAllWorkspaces] = useState([]);
   const [userData, setUserData] = useState([]);
   const [workspaceName, setWorkspaceName] = useState('');
+  const [SMsg, setSMsg] = useState(null);
 
   const [isModalOpen1, setIsModalOpen1] = useState(false);
   const openModal1 = () => setIsModalOpen1(true);
@@ -114,13 +115,25 @@ function Dash() {
         },
         body: JSON.stringify({ "name": workspaceName }),
       });
-      const createdProject = await responseCreateWS.json();
-      console.log(createdProject);
-      DataWSUpdate();
+      // const createdProject = await responseCreateWS.json();
+      // console.log(createdProject);
+      // DataWSUpdate();
+      // closeModal1();
+      // setSMsg(null);
+      if (!responseImportRepo.ok) {
+        const errorData = await responseImportRepo.json();
+        setSMsg(errorData.error);
+      } else {
+        const createdProject = await responseCreateWS.json();
+        console.log(createdProject);
+        DataWSUpdate();
+        closeModal1();
+        setSMsg(null);
+      }
     } catch (error) {
+      // setSMsg(error.message);
       console.log(`Ошибка: ${error.message}`);
     }
-    closeModal1();
   };
 
   const handleOpenWorkspace = async (e) => {
@@ -143,10 +156,21 @@ function Dash() {
         body: JSON.stringify({ "repoUrl": repoUrl }),
       });
 
-      const importedRepo = await responseImportRepo.json();
-      console.log(importedRepo);
-      DataWSUpdate();
-      closeModal2();
+      // const importedRepo = await responseImportRepo.json();
+      // console.log(importedRepo);
+      // DataWSUpdate();
+      // setSMsg(null);
+      // closeModal2();
+      if (!responseImportRepo.ok) {
+        const errorData = await responseImportRepo.json();
+        setSMsg(errorData.error);
+      } else {
+        const importedRepo = await responseImportRepo.json();
+        console.log(importedRepo);
+        DataWSUpdate();
+        setSMsg(null);
+        closeModal2();
+      }
     } catch (error) {
       console.log(`Ошибка: ${error.message}`);
     }
@@ -284,6 +308,7 @@ function Dash() {
           <div className="d-flex flex-column gap-3">
             <input type="text" className="lr-inpts" placeholder="Имя" value={workspaceName} onChange={(e) => setWorkspaceName(e.target.value)} required />
           </div>
+          <p>{SMsg ? SMsg : ""}</p>
           <input type="submit" value="Создать" className="lr-subm" />
         </form>
       </Modal>
@@ -297,6 +322,7 @@ function Dash() {
           <div className="d-flex flex-column gap-3">
             <input type="text" className="lr-inpts" placeholder="URL проекта" value={repoUrl} onChange={(e) => setRepoUrl(e.target.value)} required />
           </div>
+          <p>{SMsg ? (<p className="red">{SMsg}</p>) : ""}</p>
           <input type="submit" value="Создать" className="lr-subm" />
         </form>
       </Modal>
